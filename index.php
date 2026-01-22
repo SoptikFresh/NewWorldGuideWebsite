@@ -32,12 +32,6 @@ require('requires/header_styling.php');
             padding: 12px 0;
             gap: 14px;
             border-right: 1.4px solid #dab56255;
-            transition: all 0.3s ease;
-        }
-        .side-nav:hover {
-            background: rgba(23,24,11,0.95);
-            box-shadow: 2px 0 28px #dab56233;
-            width: 70px;
         }
         .side-nav-link {
             display: flex;
@@ -52,37 +46,16 @@ require('requires/header_styling.php');
             font-size: 1.3em;
             background: transparent;
             border: none;
-            transition: background .19s, color .19s, box-shadow .19s, transform 0.15s ease;
+            transition: background .19s, color .19s, box-shadow .19s;
             font-weight: 600;
             outline: none;
             cursor: pointer;
-            position: relative;
-        }
-        .side-nav-link::after {
-            content: attr(title);
-            position: absolute;
-            left: 60px;
-            background: #13120c;
-            color: var(--accent-gold);
-            padding: 0.4em 0.8em;
-            border-radius: 6px;
-            white-space: nowrap;
-            font-size: 0.75em;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.19s ease;
-            box-shadow: 0 2px 8px #dab56233;
-            z-index: 40;
-        }
-        .side-nav:hover .side-nav-link::after {
-            opacity: 1;
         }
         .side-nav-link.active,
         .side-nav-link:hover {
             background: var(--accent-gold);
             color: #272106 !important;
             box-shadow: 0 0 0 2px var(--accent-gold-dark), 0 0 10px #dab56257;
-            transform: scale(1.15);
         }
         .side-nav-link:focus {
             outline: 2px solid var(--accent-gold-dark);
@@ -105,8 +78,6 @@ require('requires/header_styling.php');
             min-height: 0;
             min-width: 0;
             padding-bottom: 34px;
-            gap: 1.5rem;
-            transition: margin-left 0.3s ease;
         }
         section.article-section {
             min-height: 100vh;
@@ -119,6 +90,7 @@ require('requires/header_styling.php');
             border: 1.2px solid #dab56236;
             position: relative;
             box-sizing: border-box;
+            /* key padding fix */
             padding: 72px 3vw 60px 3vw;
             display: flex;
             flex-direction: column;
@@ -126,20 +98,7 @@ require('requires/header_styling.php');
             align-items: center;
             scroll-snap-align: start;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
-        }
-        section.article-section:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 50px #dab56228, 0 4px 20px #dab56220;
-        }
-        section.article-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at 50% 0%, rgba(218,181,98,0.1) 0%, transparent 70%);
-            pointer-events: none;
-            border-radius: 24px;
         }
         section.article-section:not(:first-child) {
             margin-top: 7vh;
@@ -151,30 +110,6 @@ require('requires/header_styling.php');
             letter-spacing: 1.3px;
             text-shadow: 0 3px 24px #dab56240, 0 0 8px #fff1;
             margin-bottom: 32px;
-            animation: fadeInDown 0.6s ease-out;
-            position: relative;
-            display: inline-block;
-        }
-        .section-title::before {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
-            border-radius: 2px;
-        }
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
         .section-heading {
             color: #efdcab;
@@ -184,10 +119,6 @@ require('requires/header_styling.php');
             margin-top: 1.5em;
             margin-bottom: 0.68em;
             text-shadow: 0 2px 8px #dab56226, 0 0 3px #a3822d11;
-            transition: color 0.19s ease;
-        }
-        .section-heading:hover {
-            color: var(--accent-gold-light);
         }
         .article-section p,
         .article-section ul,
@@ -200,18 +131,6 @@ require('requires/header_styling.php');
             box-sizing: border-box;
             word-break: break-word;
             overflow-wrap: break-word;
-            transition: color 0.19s ease;
-        }
-        .article-section p {
-            padding: 0.5em 0;
-        }
-        .article-section p a {
-            color: var(--accent-gold-light);
-            transition: color 0.19s ease, text-shadow 0.19s ease;
-        }
-        .article-section p a:hover {
-            color: #fffbe6;
-            text-shadow: 0 0 8px #dab56266;
         }
         .article-section ul {
             list-style-type: none;
@@ -226,11 +145,6 @@ require('requires/header_styling.php');
             padding-left: 0.2em;
             margin: 0.4em 0 0.4em 0;
             max-width: 100%;
-            transition: transform 0.19s ease, color 0.19s ease;
-        }
-        .article-section ul li:hover {
-            transform: translateX(8px);
-            color: var(--accent-gold-light);
         }
         .article-section .checkmark {
             color: #65fd8e;
@@ -257,24 +171,14 @@ require('requires/header_styling.php');
             .article-section > * { max-width: 97vw; }
         }
         @media (max-width:900px) {
-            .main-content-sections { 
-                margin-left: 0; 
-            }
-            .side-nav { 
-                display: none; 
-            }
+            .main-content-sections { margin-left: 0; }
+            .side-nav { display: none; }
             section.article-section {
                 border-radius: 10px;
-                min-height: auto;
+                min-height: 100vh;
                 padding: 54px 4vw 38px 4vw;
-                margin-bottom: 2rem;
             }
-            .section-title { 
-                font-size: 1.35rem; 
-            }
-            .section-title::before {
-                width: 40px;
-            }
+            .section-title { font-size: 1.35rem; }
             .logo-img { width: 38px; height: 38px;}
             .site-title { font-size: 1.11rem;}
             .nav-bar { gap: 0.1rem;}
@@ -289,18 +193,9 @@ require('requires/header_styling.php');
         @media (max-width: 700px) {
             section.article-section {
                 padding: 32px 6vw 20px 6vw;
-                min-height: auto;
             }
-            .section-title { 
-                font-size: 1.1rem;
-            }
-            .section-title::before {
-                width: 30px;
-                bottom: -8px;
-            }
-            .section-heading { 
-                font-size: 1.03em; 
-            }
+            .section-title { font-size: 1.1rem; }
+            .section-heading { font-size: 1.03em; }
             .article-section > *,
             .article-section p,
             .article-section ul,
@@ -308,24 +203,13 @@ require('requires/header_styling.php');
                 max-width: 100vw;
                 font-size: 0.99em;
             }
-            .main-content-sections {
-                gap: 1rem;
-            }
         }
         @media (max-width: 530px) {
             .logo-img { width: 27px; height: 27px;}
             .site-title { font-size: 0.98rem;}
             main { padding: 0.3rem; }
-            section.article-section { 
-                padding: 18px 5vw 14px 5vw;
-            }
-            .section-title { 
-                font-size: 0.92rem;
-            }
-            .section-title::before {
-                width: 25px;
-                bottom: -6px;
-            }
+            section.article-section { padding: 18px 5vw 14px 5vw; }
+            .section-title { font-size: 0.92rem; }
             .section-heading, .article-section p, .article-section ul, .article-section li {
                 font-size: 0.90em;
             }
@@ -335,12 +219,7 @@ require('requires/header_styling.php');
                 padding: 10px 2vw 10px 2vw;
                 border-radius: 4px;
             }
-            .section-title { 
-                font-size: 0.75rem;
-            }
-            .section-title::before {
-                display: none;
-            }
+            .section-title { font-size: 0.75rem; }
             .section-heading,
             .article-section p,
             .article-section ul,

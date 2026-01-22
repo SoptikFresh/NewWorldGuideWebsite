@@ -1,42 +1,39 @@
-# New World Guide Website
+# Langi Page
 
-This project is a collection of guides, tools, and resources for the MMORPG New World. It is designed to help players with various aspects of the game, including builds, gold making, PvP, and more.
-
-## Features
-
-- Comprehensive guides for new and experienced players
-- Build calculators and tools
-- Gold making strategies
-- Raid and dungeon guides
-- Trophy and runeglass information
-- Weight calculator
-- Dropdown configuration for dynamic content
+This project is a collection of PHP scripts and resources for New World game guides, builds, and calculators. It provides various pages and tools to help players with different aspects of the game.
 
 ## Project Structure
 
-- `index.php`: Main landing page
-- `dropdown_config.php`, `dropdowns.json`: Dropdown menu configuration
-- `new-world-*.php`: Individual guide and tool pages
-- `requires/`: Shared PHP includes (headers, meta tags, styling)
+- **index.php**: Main landing page.
+- **dropdown_config.php**: Configuration for dropdown menus.
+- **dropdowns.json**: JSON data for dropdowns.
+- **new-world-\*.php**: Individual guide/build pages for New World topics (builds, gold making, guides, raid guides, etc.).
+- **requires/**: Shared PHP includes for headers, meta tags, and styling.
+
+## Features
+
+- Game guides and tutorials
+- Build calculators
+- Dropdown menu configuration
+- Modular PHP includes for easy maintenance
 
 ## Getting Started
 
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/SoptikFresh/NewWorldGuideWebsite
-   ```
-2. Place the project files on your PHP-enabled web server.
-3. Access `index.php` or any of the guide pages in your browser.
+1. Clone or download the repository.
+2. Place the files on a PHP-enabled web server.
+3. Access `index.php` in your browser to view the main page.
 
 ## Requirements
 
 - PHP 7.0 or higher
 - Web server (Apache, Nginx, etc.)
 
-## Contributing
+## Customization
 
-Contributions are welcome! Please fork the repository and submit a pull request.
+- Edit `dropdown_config.php` and `dropdowns.json` to update dropdown menus.
+- Add or modify guide pages as needed.
+- Update shared includes in the `requires/` folder for site-wide changes.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is provided as-is for personal or educational use. Please contact the author for commercial use or redistribution.

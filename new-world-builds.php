@@ -86,13 +86,6 @@
             align-items: center;
             margin-bottom: 0.5rem;
             min-height: 61px;
-            flex-wrap: wrap;
-            transition: all 0.3s ease;
-        }
-        .dropdown-bar:hover {
-            background: rgba(23,24,11,0.98);
-            box-shadow: 0 2px 18px #5036001f;
-            border-color: #70562266;
         }
         /* Restored Original Dropdown Button Style */
         .dropdown {
@@ -117,9 +110,6 @@
             box-shadow: 0 4px 24px #dab56299;
             transform: scale(1.045);
             color: #463c12;
-        }
-        .dropbtn:active {
-            transform: scale(0.98);
         }
         .dropdown-content {
             display: none;
@@ -186,13 +176,6 @@
             min-width: 90px;
             box-shadow: 0 1.8px 11px #dab56217;
             border: 1.2px solid #dab56233;
-            transition: all 0.19s ease;
-            user-select: none;
-        }
-        .splitter-title:hover {
-            background: #3d3e17f0;
-            border-color: #dab56244;
-            box-shadow: 0 2.5px 15px #dab56222;
         }
         .dropdown-nested {
             display: flex;
@@ -238,11 +221,6 @@
             position: relative;
             overflow: auto;
             z-index: 2;
-            transition: all 0.3s ease;
-        }
-        .loader-wrapper:hover {
-            box-shadow: 0 12px 64px #0e0c0780, 0 4px 15px #dab56220;
-            border-color: #dab56266;
         }
         #gearset-iframe {
             opacity: 0;
@@ -258,10 +236,7 @@
             min-height: 350px;
             min-width: 0;
         }
-        #gearset-iframe.visible { 
-            opacity: 1; 
-            z-index: 3; 
-        }
+        #gearset-iframe.visible { opacity: 1; z-index: 3; }
         .spinner {
             border: 6px solid #dab56230;
             border-top: 6px solid var(--accent-gold);
@@ -273,12 +248,8 @@
             position: relative;
             z-index: 4;
             background: none;
-            box-shadow: 0 0 24px #dab56244;
         }
-        @keyframes spin { 
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+        @keyframes spin { 100% {transform: rotate(360deg);} }
         footer {
             background: linear-gradient(92deg, #191813ff 0%, #373012f9 100%);
             border-radius: var(--round) var(--round) 0 0;
@@ -291,20 +262,9 @@
             letter-spacing: 0.8px;
             box-shadow: 0 -2px 16px #0004;
             border-top: 1.5px solid #dab56246;
-            transition: all 0.3s ease;
-        }
-        footer:hover {
-            opacity: 1;
-            box-shadow: 0 -4px 24px #0008;
         }
         footer a {
             color: #fff5df;
-            transition: color 0.19s ease;
-            text-decoration: none;
-        }
-        footer a:hover {
-            color: var(--accent-gold);
-            text-decoration: underline;
         }
         @media (min-width: 1700px) {
             main, .loader-wrapper, .dropdown-bar {
@@ -323,31 +283,19 @@
             .loader-wrapper {
                 min-height: 290px;
             }
-            .dropdown-bar { 
-                gap: 0.7rem;
-            }
-            .dropbtn {
-                font-size: 0.95rem;
-                padding: 0.42rem 1rem;
-            }
+            .dropdown-bar { gap: 0.7rem; }
         }
         @media (max-width: 700px) {
-            .dropdown-bar { 
-                flex-wrap: wrap; 
-                justify-content: flex-start;
-                gap: 0.6rem;
-                padding: 0.15rem 0.4rem;
-                min-height: auto;
-            }
+            .dropdown-bar { flex-wrap: wrap; justify-content: flex-start; }
              .dropdown-content:not(.dropdown-content-row .dropdown-content)  {
                 position: fixed;
                 top: 55%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                width: 90vw;
+                width: 90vw; /* Responsive width */
                 max-width: 350px;
-                max-height: 80vh;
-                overflow-y: auto;
+                max-height: 80vh;        /* Prevents overflow */
+                overflow-y: auto; 
                 z-index: 10000;
             }
             
