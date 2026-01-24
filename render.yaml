@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: new-world-guide-website
+    runtime: docker
+    region: oregon
+    plan: free
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: ENVIRONMENT
+        value: production
